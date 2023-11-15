@@ -1,8 +1,10 @@
+import './header-component.scss'; 
+
 function Header() {
     return (
         <header className="header"> 
             <nav>
-                <ul>
+                <ul role='list' className='navigation'>
                     <li className="navItem">Начало</li>
                     <li className="navItem">Продукти</li>
                     <li className="navItem">За Нас</li>
