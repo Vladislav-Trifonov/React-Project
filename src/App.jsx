@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Header from "./components/HeaderComponent/Header";
+import Footer from "./components/FooterComponent/Footer";
 
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
       <Header />
+      <Footer />
     </>
   );
 }
