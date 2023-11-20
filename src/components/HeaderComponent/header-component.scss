@@ -1,7 +1,21 @@
-.navigation {
+.header {
+
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
+    justify-content: space-between;
     background-color: gray;
+
+    .login-register {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding-right: 3rem;
+    }
+
+    .navigation {
+        display: flex;
+        gap: 3rem;
+        padding-left: 3rem;
+        align-items: center;
+        height: 10vh;
+    }
 }
