@@ -1,0 +1,27 @@
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    background-color: black; 
+
+    .login-register {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding-right: 3rem;
+    }
+
+    .navigation {
+        display: flex;
+        gap: 3rem;
+        padding-left: 3rem;
+        align-items: center;
+        height: 10vh;
+    }
+
+    .navigation-item, .login-register {
+        text-decoration: none;
+        color: white;
+    }
+
+}
