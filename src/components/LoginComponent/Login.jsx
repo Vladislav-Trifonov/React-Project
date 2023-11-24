@@ -1,3 +1,5 @@
+import './login.scss'; 
+
 function Login() {
   return (
     <section className="login-section">
