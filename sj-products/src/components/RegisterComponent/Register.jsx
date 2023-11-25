@@ -1,21 +1,53 @@
+import './register-component.scss';
+
+
 function Register() {
   return (
     <section className="register-section">
-      <form action="" className="register-form">
+      <form class="register-form">
         <div>
-          <label htmlFor="email">Имейл:</label>
-          <input type="text" id="email" />
+          <label htmlFor="email">Email address</label>
+          <input
+            ngModel
+            name="email"
+            id="email"
+            autofocus
+            placeholder="username@gmail.com"
+            required
+            pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$"
+          />
         </div>
 
         <div>
-          <label htmlFor="password">Парола:</label>
-          <input type="text" id="password" />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="******"
+            required
+            minlength="6"
+          />
         </div>
 
         <div>
-          <label htmlFor="re-password">Потвърди Парола :</label>
-          <input type="text" id="re-password" />
+          <label for="repassword">Confirm password</label>
+          <input
+            type="password"
+            name="repassword"
+            id="repassword"
+            placeholder="******"
+            required
+            minlength="6"
+          />
         </div>
+
+        <button type="submit">Sign up</button>
+
+        <p>
+          Already have an account?
+          <a routerLink="/login">Sign in</a>
+        </p>
       </form>
     </section>
   );
