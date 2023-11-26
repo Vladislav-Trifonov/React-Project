@@ -4,14 +4,12 @@ import './register-component.scss';
 function Register() {
   return (
     <section className="register-section">
-      <form class="register-form">
+      <form className="register-form">
         <div>
           <label htmlFor="email">Email address</label>
           <input
-            ngModel
             name="email"
             id="email"
-            autofocus
             placeholder="username@gmail.com"
             required
             pattern="^[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$"
@@ -26,7 +24,7 @@ function Register() {
             id="password"
             placeholder="******"
             required
-            minlength="6"
+            minLength="6"
           />
         </div>
 
