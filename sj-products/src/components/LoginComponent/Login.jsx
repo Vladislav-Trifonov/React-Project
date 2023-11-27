@@ -1,20 +1,28 @@
 import "./login-component.scss";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { login } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); 
-
-  async function onLoginHandler (e) {
+  async function onLoginHandler(e) {
+    
     e.preventDefault();
-   const userData = await login('peter@abv.bg', '123456'); 
-   console.log(userData);
-   sessionStorage.setItem('userData', JSON.stringify(userData))
-   navigate('/');
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    console.log(email, password);
+  
+    try {
+      const userData = await login(email, password);
+      console.log(userData);  
+      sessionStorage.setItem("userData", JSON.stringify(userData));
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+    }
   }
-
 
   return (
     <section className="login-section">
@@ -46,7 +54,9 @@ function Login() {
 
         <p className="no-account">
           Все още нямаш акаунт?
-          <Link to="/register" className="to-register">Регистрирай се тук!</Link>
+          <Link to="/register" className="to-register">
+            Регистрирай се тук!
+          </Link>
         </p>
       </form>
     </section>
