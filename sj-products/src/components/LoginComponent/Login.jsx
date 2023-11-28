@@ -51,6 +51,7 @@ function Login() {
         </div>
 
         <button type="submit">Влез</button>
+        <button className="google-btn">Вход с Google</button>
 
         <p className="no-account">
           Все още нямаш акаунт?

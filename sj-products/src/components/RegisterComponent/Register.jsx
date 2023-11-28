@@ -1,12 +1,35 @@
-import './register-component.scss';
-
+import "./register-component.scss";
+import { register } from "../../services/userService";
+import { useNavigate, Link } from "react-router-dom";
 
 function Register() {
+
+  const navigate = useNavigate(); 
+
+  async function onRegisterHandler(email, password) {
+    try{
+      const userData = await register(email, password);
+      sessionStorage.setItem('userData', JSON.stringify({id: userData._id, accessToken: userData.accessToken}));
+      navigate('/');
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+  function onRegisterSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const email = formData.get('email');
+      const password = formData.get('password');
+      onRegisterHandler(email, password);
+      console.log(email, password);
+  }
+
   return (
     <section className="register-section">
-      <form className="register-form">
+      <form className="register-form" onSubmit={onRegisterSubmit}>
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Имейл</label>
           <input
             name="email"
             id="email"
@@ -17,7 +40,7 @@ function Register() {
         </div>
 
         <div>
-          <label for="password">Password</label>
+          <label htmlFor="password">Парола</label>
           <input
             type="password"
             name="password"
@@ -29,22 +52,21 @@ function Register() {
         </div>
 
         <div>
-          <label for="repassword">Confirm password</label>
+          <label htmlFor="repassword">Потвърди Паролата</label>
           <input
             type="password"
             name="repassword"
             id="repassword"
             placeholder="******"
             required
-            minlength="6"
+            minLength="6"
           />
         </div>
 
-        <button type="submit">Sign up</button>
-
+        <button type="submit">Регистрирай се</button>
         <p>
-          Already have an account?
-          <a routerLink="/login">Sign in</a>
+          Вече имаш акаунт?
+          <Link to="/login">Влез тук</Link>
         </p>
       </form>
     </section>
