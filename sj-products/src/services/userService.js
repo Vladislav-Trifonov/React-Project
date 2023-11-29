@@ -37,3 +37,14 @@ export async function register(email, password) {
     console.log(error);
   }
 }
+
+export async function getAllProducts() {
+    try {
+    const response = await fetch('http://localhost:3031/data/records'); 
+
+    console.log( Object.values(response));
+    return Object.values(response);
+    } catch(error) {
+      console.log(error);
+    }
+}

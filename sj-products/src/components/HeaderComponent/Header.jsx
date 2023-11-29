@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
       <nav className="navigation">
           <Link to="/" className="navigation-item">Начало</Link>
-          <Link to="/" className="navigation-item">Продукти</Link>
+          <Link to="/products" className="navigation-item">Продукти</Link>
           <Link to="/" className="navigation-item">За Нас</Link>
           <Link to="/" className="navigation-item">Контакти</Link>
       </nav>

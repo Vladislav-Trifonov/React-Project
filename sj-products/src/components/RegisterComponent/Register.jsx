@@ -1,10 +1,12 @@
 import "./register-component.scss";
 import { register } from "../../services/userService";
 import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 
 function Register() {
 
   const navigate = useNavigate(); 
+  const [error, setError] = useState('')
 
   async function onRegisterHandler(email, password) {
     try{
@@ -21,6 +23,13 @@ function Register() {
       const formData = new FormData(e.target);
       const email = formData.get('email');
       const password = formData.get('password');
+      const repassword = formData.get('repassword'); 
+
+      if (password !== repassword) {
+        setError('Паролите не съвпадат!')
+        return;
+      }
+
       onRegisterHandler(email, password);
       console.log(email, password);
   }
@@ -62,6 +71,8 @@ function Register() {
             minLength="6"
           />
         </div>
+
+        {error && <p className="error-messgae">{error}</p>}
 
         <button type="submit">Регистрирай се</button>
         <p>
