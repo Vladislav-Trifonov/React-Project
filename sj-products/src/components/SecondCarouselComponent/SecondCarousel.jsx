@@ -1,10 +1,11 @@
-import './second-carousel.scss';
+import "./second-carousel.scss";
 
 function SecondCarousel() {
-    return (<div className='second-carousel-item'>
-       
-        <h1>Някаква информация</h1>
-    </div>);
+  return (
+    <section className="second-carousel-item">
+      <h1>Някаква информация</h1>
+    </section>
+  );
 }
 
-export default SecondCarousel; 
+export default SecondCarousel;

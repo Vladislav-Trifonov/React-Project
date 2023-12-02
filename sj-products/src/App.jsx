@@ -9,10 +9,11 @@ import SecondCarousel from "./components/SecondCarouselComponent/SecondCarousel"
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from "./components/HomeComponent/Home";
 import Products from "./components/ProductsComponent/Products";
+import ThirdCarousel from "./components/ThirdCarouselComponent/ThirdCarousel";
 
 function App() {
 
-  const components = [FirstCarousel, SecondCarousel]; 
+  const components = [FirstCarousel, SecondCarousel, ThirdCarousel]; 
 
   return (
     <>

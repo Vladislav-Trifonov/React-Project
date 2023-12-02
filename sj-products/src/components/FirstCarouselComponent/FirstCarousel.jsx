@@ -1,11 +1,11 @@
-import kitchenImage from './kitchen.jpg'
-import './first-carousel.scss';
+import "./first-carousel.scss";
 
 function FirstCarousel() {
-    return (<div className='first-carousel-item'>
-       
-        <h1>Плоскости на изгодни цени</h1>
-    </div>);
+  return (
+    <section className="first-carousel-item">
+      <h1>Плоскости на изгодни цени</h1>
+    </section>
+  );
 }
 
-export default FirstCarousel; 
+export default FirstCarousel;
