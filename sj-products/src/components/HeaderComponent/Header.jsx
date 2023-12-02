@@ -1,8 +1,13 @@
 import "./header-component.scss";
 import logo from "./all.jpg";
 import { Link } from "react-router-dom";
+import { logout } from "../../services/userService";
 
 function Header() {
+
+  const hasUser = sessionStorage.getItem('userData');
+  console.log(hasUser);
+
   return (
     <header className="header">
       <nav className="navigation">
@@ -13,8 +18,14 @@ function Header() {
       </nav>
 
       <div className="login-register">
-        <Link to="/login">Вход</Link>
-        <Link to="/register">Регистрация</Link>
+
+        {hasUser == null ?
+          <>
+           <Link to="/login">Вход</Link>
+           <Link to="/register">Регистрация</Link>
+          </>
+          : <button className="logout-btn" onClick={logout}>Изход</button>}
+     
       </div>
     </header>
   );

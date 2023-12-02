@@ -17,7 +17,7 @@ function Login() {
     try {
       const userData = await login(email, password);
       console.log(userData);  
-      sessionStorage.setItem("userData", JSON.stringify(userData));
+      sessionStorage.setItem("userData", JSON.stringify({accessToken: userData.accessToken, id: userData._id}));
       navigate("/");
     } catch (error) {
       console.log(error.message);
