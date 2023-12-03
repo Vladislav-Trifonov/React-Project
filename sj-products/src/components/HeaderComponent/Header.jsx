@@ -14,6 +14,7 @@ function Header() {
           <Link to="/" className="navigation-item">Начало</Link>
           <Link to="/products" className="navigation-item">Продукти</Link>
           <Link to="/" className="navigation-item">За Нас</Link>
+          <Link to="/create" className="navigation-item">Добави Продукт</Link>
           <Link to="/" className="navigation-item">Контакти</Link>
       </nav>
 

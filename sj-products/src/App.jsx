@@ -10,6 +10,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Home from "./components/HomeComponent/Home";
 import Products from "./components/ProductsComponent/Products";
 import ThirdCarousel from "./components/ThirdCarouselComponent/ThirdCarousel";
+import Create from "./components/CreateComponent/Create";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register/>}/>
         <Route path="/products" element={<Products/>}/>
+        <Route path="/create" element={<Create/>}/>
       </Routes>
       <Footer />
     </>

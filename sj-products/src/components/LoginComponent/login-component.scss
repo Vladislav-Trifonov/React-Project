@@ -1,21 +1,9 @@
 .login-section {
-
-    height: 65vh;
-
-
-
-  .logingClass {
-    background-image: url("/assets/loginV.jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    width: 100%;
-    height: 91.8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .logingClass h1 {
     font-size: 36px;
@@ -29,8 +17,6 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    margin: 3rem auto;
-    padding-bottom: 2rem;
   }
 
   .login-form label {
@@ -80,7 +66,6 @@
 
   .to-register {
     padding-left: 6px;
-    
   }
 
   .login-form p > a {

@@ -2,9 +2,49 @@ import "./login-component.scss";
 import { Link } from "react-router-dom";
 import { login } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Login() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: 'your-app-id',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v12.0',
+      });
+    };
+
+    // Load the SDK asynchronously
+    function loadSdkAsynchronously(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+
+    loadSdkAsynchronously(document, 'script', 'facebook-jssdk');
+  }, []);
+
+  function onFacebookLoginHandler() {
+    window.FB.login(
+      function (response) {
+        if (response.authResponse) {
+          // User is logged in
+          console.log('Facebook login successful:', response);
+          // You can now handle the response, e.g., send it to your server for authentication
+        } else {
+          console.log('Facebook login failed:', response);
+        }
+      },
+      { scope: 'email' } // Specify the required permissions
+    );
+  }
 
   async function onLoginHandler(e) {
     
@@ -51,7 +91,7 @@ function Login() {
         </div>
 
         <button type="submit">Влез</button>
-        <button className="google-btn">Вход с Google</button>
+        <button className="facebook-btn" onClick={onFacebookLoginHandler}>Вход с Facebook</button>
 
         <p className="no-account">
           Все още нямаш акаунт?

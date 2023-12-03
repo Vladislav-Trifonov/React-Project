@@ -1,4 +1,6 @@
-function Create(params) {
+import './create-component.scss'; 
+
+function Create() {
   return (
     <section class="create">
       <h1>Добави Продукт</h1>
@@ -9,8 +11,7 @@ function Create(params) {
           <input
             name="name"
             id="name"
-            autofocus
-            placeholder="The Long Night"
+            placeholder="Име на продукта"
             required
             min="4"
           />
@@ -22,7 +23,7 @@ function Create(params) {
             type="text"
             name="image"
             id="image"
-            placeholder="Image URL"
+            placeholder="URL на снимката"
             required
           />
         </div>
@@ -35,7 +36,7 @@ function Create(params) {
             name="description"
             id="description"
             list="description"
-            placeholder="One of the best episodes ever"
+            placeholder="Описание за продукта"
             required
           />
         </div>
@@ -46,7 +47,7 @@ function Create(params) {
             type="text"
             name="rating"
             id="rating"
-            placeholder="9.9"
+            placeholder="9.99"
             required
           />
         </div>
@@ -56,3 +57,5 @@ function Create(params) {
     </section>
   );
 }
+
+export default Create; 
