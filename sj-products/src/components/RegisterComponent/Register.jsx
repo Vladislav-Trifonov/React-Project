@@ -1,4 +1,4 @@
-import "./register-component.scss";
+import "./register.scss";
 import { register } from "../../services/userService";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";

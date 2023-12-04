@@ -1,4 +1,4 @@
-import './create-component.scss'; 
+import './create.scss'; 
 
 function Create() {
   return (

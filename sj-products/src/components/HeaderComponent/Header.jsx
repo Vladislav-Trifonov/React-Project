@@ -1,4 +1,4 @@
-import "./header-component.scss";
+import "./header.scss";
 import logo from "./all.jpg";
 import { Link } from "react-router-dom";
 import { logout } from "../../services/userService";

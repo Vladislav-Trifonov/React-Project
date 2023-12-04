@@ -1342,18 +1342,18 @@
     	products: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "МДФ",
-                price: 40,
+    			name: "ПДЧ",
+                price: 30,
                 description: "Някакво тестово описание",
-    			img: "assets/lasagna.jpg",
+    			img: "https://newman-group.bg/wp-content/uploads/2016/05/blurb-8-min.jpg",
     			_createdOn: 1613551279012
     		},
     		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "ПДЧ",
-                price: 30,
+    			name: "МДФ",
+                price: 40,
                 description: "Някакво тестово описание",
-    			img: "assets/lasagna.jpg",
+    			img: "https://www.home-max.bg/static/media/ups/cached/d5466e5285d453400d2d436a4be2659ec5abf6ff.jpg",
     			_createdOn: 1613551344360
     		},
     	},

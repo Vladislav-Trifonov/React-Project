@@ -1,4 +1,4 @@
-import "./login-component.scss";
+import "./login.scss";
 import { Link } from "react-router-dom";
 import { login } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
