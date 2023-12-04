@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { getAllProducts } from "../../services/productsService";
+import SingleProduct from "../SingleProductComponent/SingleProduct";
 
 
 function Products() {
@@ -16,6 +18,8 @@ function Products() {
     return(
         <section>
             <h1>All products</h1>
+
+            {productsList.map(product => <SingleProduct key={product._id} {...product}/>)}
         </section>
     );
 }
