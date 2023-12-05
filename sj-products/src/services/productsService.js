@@ -8,3 +8,24 @@ export async function getAllProducts () {
 
     return products; 
 }
+
+export async function addProduct({productData}) {
+
+    const result = await fetch(baseUrl, {
+        headers: {
+           'content-type': 'application/json'
+        },
+        method: 'POST', 
+        body: JSON.stringify(productData)
+    })
+
+    if (response.status === 204) {
+        return {};
+    }
+
+    if (!response.ok) {
+        throw result;
+    } 
+
+    return result;
+}
