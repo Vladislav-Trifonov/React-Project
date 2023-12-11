@@ -19,14 +19,14 @@
         height: 10vh;
     }
 
-    .navigation-item, .login-register {
-        text-decoration: none;
-        color: white;
-    }
-
     .logout-btn {
         border: none;
         background-color: unset;
+        color: white;
+    }
+
+    .login-register, .navigation-item {
+        text-decoration: none;
         color: white;
     }
 }

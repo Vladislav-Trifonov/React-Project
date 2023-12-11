@@ -6,7 +6,10 @@ import { logout } from "../../services/userService";
 function Header() {
 
   const hasUser = sessionStorage.getItem('userData');
-  console.log(hasUser);
+  
+  const logout = () => {
+    sessionStorage.removeItem('userData')
+  }
 
   return (
     <header className="header">
@@ -22,8 +25,8 @@ function Header() {
 
         {hasUser == null ?
           <>
-           <Link to="/login">Вход</Link>
-           <Link to="/register">Регистрация</Link>
+           <Link to="/login" className="login-register">Вход</Link>
+           <Link to="/register" className="login-register">Регистрация</Link>
           </>
           : <button className="logout-btn" onClick={logout}>Изход</button>}
      

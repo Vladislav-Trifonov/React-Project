@@ -3,7 +3,7 @@ import "./first-carousel.scss";
 function FirstCarousel() {
   return (
     <section className="first-carousel-item">
-      <h1>Плоскости на изгодни цени</h1>
+      <h1 className="text-area">Плоскости на изгодни цени</h1>
     </section>
   );
 }

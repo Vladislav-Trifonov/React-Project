@@ -8,6 +8,45 @@ function Login() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: '7312675582085833',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v12.0',
+      });
+    };
+
+    // Load the SDK asynchronously
+    function loadSdkAsynchronously(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+
+    loadSdkAsynchronously(document, 'script', 'facebook-jssdk');
+  }, []);
+
+  function onFacebookLoginHandler() {
+    window.FB.login(
+      function (response) {
+        if (response.authResponse) {
+          // User is logged in
+          console.log('Facebook login successful:', response);
+          // You can now handle the response, e.g., send it to your server for authentication
+        } else {
+          console.log('Facebook login failed:', response);
+        }
+      },
+      { scope: 'email' } // Specify the required permissions
+    );
+  }
+
   async function onLoginHandler(e) {
     
     e.preventDefault();
