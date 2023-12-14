@@ -11,7 +11,8 @@ function Register() {
   async function onRegisterHandler(email, password) {
     try{
       const userData = await register(email, password);
-      sessionStorage.setItem('userData', JSON.stringify({id: userData._id, accessToken: userData.accessToken}));
+
+      sessionStorage.setItem('accessToken', (userData.accessToken));
       navigate('/');
     } catch(error) {
       console.log(error);

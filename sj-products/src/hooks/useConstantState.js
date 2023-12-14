@@ -21,7 +21,7 @@ export default function usePersistedState(key, defaultValue) {
             serializedValue = JSON.stringify(value);
         }
 
-        localStorage.setItem(key, serializedValue);
+        sessionStorage.setItem(key, serializedValue);
     };
 
     return [
