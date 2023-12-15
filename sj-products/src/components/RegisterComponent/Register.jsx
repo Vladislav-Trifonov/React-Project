@@ -1,43 +1,19 @@
 import "./register.scss";
-import { register } from "../../services/userService";
+import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import AuthContext from "../../contexts/authenticationContext";
 
 function Register() {
 
   const navigate = useNavigate(); 
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
 
-  async function onRegisterHandler(email, password) {
-    try{
-      const userData = await register(email, password);
-
-      sessionStorage.setItem('accessToken', (userData.accessToken));
-      navigate('/');
-    } catch(error) {
-      console.log(error);
-    }
-  }
-
-  function onRegisterSubmit(e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const email = formData.get('email');
-      const password = formData.get('password');
-      const repassword = formData.get('repassword'); 
-
-      if (password !== repassword) {
-        setError('Паролите не съвпадат!')
-        return;
-      }
-
-      onRegisterHandler(email, password);
-      console.log(email, password);
-  }
+  const { onRegisterHandler } = useContext(AuthContext);
 
   return (
     <section className="register-section">
-      <form className="register-form" onSubmit={onRegisterSubmit}>
+      <form className="register-form" onSubmit={onRegisterHandler}>
         <div>
           <label htmlFor="email">Имейл</label>
           <input

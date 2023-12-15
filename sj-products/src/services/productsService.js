@@ -9,6 +9,15 @@ export async function getAllProducts () {
     return products; 
 }
 
+export async function getOneProduct(productId) {
+    
+    const result = await fetch(`${baseUrl}/${productId}`);
+
+    const product = await result.json();
+
+    return product;
+}
+
 export async function addProduct(productData) {
 
     const token = sessionStorage.getItem('accessToken');
