@@ -1,11 +1,14 @@
 import "./login.scss";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/authenticationContext";
 
 function Login() {
+  const { onLoginHandler, error, setError } = useContext(AuthContext);
 
-  const { onLoginHandler } = useContext(AuthContext);
+  useEffect(() => {
+    setError('');
+  }, [])
 
   return (
     <section className="login-section">
@@ -34,6 +37,8 @@ function Login() {
         </div>
 
         <button type="submit">Влез</button>
+
+        {error && <p className="server-error">Сървърът не е включен!</p>}
 
         <p className="no-account">
           Все още нямаш акаунт?

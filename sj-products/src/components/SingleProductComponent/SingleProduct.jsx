@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import './single-product.scss'; 
 
-function SingleProduct({name, price, description, img, _id}) {
+function SingleProduct({name, price, img, _id}) {
 
   return (
     <div className="single-product">
       <img src={img} className='product-img'/>
 
-      <h5>Име: {name}</h5>
+      <h3>Име: {name}</h3>
 
-      <p class="releaseDate">Цена: {price}</p>
+      <p className="releaseDate">Цена: {price}лв</p>
       <Link to={`/products/${_id}`} className='details-btn'>Детайли</Link>
     </div>
   );

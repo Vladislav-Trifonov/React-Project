@@ -1,45 +1,63 @@
 import { useContext, useEffect, useReducer, useState, useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { getOneProduct } from "../../services/productsService";
+import { getOneProduct, removeProduct } from "../../services/productsService";
 
 import './product-details.scss'; 
 
 import AuthContext from "../../contexts/authenticationContext";
+import { addLike } from "../../services/likesService";
 
 export default function ProductDetails() {
   const navigate = useNavigate();
-  const { email, userId } = useContext(AuthContext);
+  const { userId, accessToken } = useContext(AuthContext);
   const [product, setProduct] = useState({});
   const { productId } = useParams();
+  const canLike = (product._ownerId !== userId) && (userId !== undefined);
+  console.log(canLike);
 
   useEffect(() => {
     getOneProduct(productId)
     .then(setProduct);
   }, [productId]);
 
-  console.log(product);
-
   const deleteButtonClickHandler = async () => {
     const hasConfirmed = confirm(
-      `Are you sure you want to delete ${game.title}`
+      `Сигурне ли сте, че искате да изтриете ${product.name}`
     );
 
     if (hasConfirmed) {
-      await gameService.remove(productId);
+      removeProduct(productId, accessToken);
 
-      navigate("/games");
+      navigate("/products");
     }
   };
+
+  const likeButtonClickHandler = async () => {
+     const test = await addLike(productId); 
+     console.log(test);
+  }
 
   return (
     <section className="product-details">
       <div className="single-product">
         <img src={product.img} className="product-img" />
 
-        <h5>Име: {product.name}</h5>
+        <h3>Име: {product.name}</h3>
 
         <p className="releaseDate">Цена: {product.price}</p>
         <p className="description">{product.description}</p>
+        
+        {canLike && 
+        <button className="edit-delete-btn" onClick={likeButtonClickHandler}>Харесай</button>
+      }
+
+        {product._ownerId === userId && 
+        <div className="btn-holder">
+        <Link to={`/products/${product._id}/edit`} className="edit-delete-btn only-edit">Редактиране</Link>
+        <button className="edit-delete-btn" onClick={deleteButtonClickHandler}>Изтриване</button>
+        </div>
+        }
+        
       </div>
     </section>
   );

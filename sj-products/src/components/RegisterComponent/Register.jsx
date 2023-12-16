@@ -1,15 +1,15 @@
 import "./register.scss";
-import { useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/authenticationContext";
+import { Link } from "react-router-dom";
 
 function Register() {
 
-  const navigate = useNavigate(); 
-  const [error, setError] = useState('');
+  const { onRegisterHandler, error, setError } = useContext(AuthContext);
 
-  const { onRegisterHandler } = useContext(AuthContext);
+  useEffect(() => {
+    setError('');
+  }, [])
 
   return (
     <section className="register-section">
@@ -49,9 +49,9 @@ function Register() {
           />
         </div>
 
-        {error && <p className="error-messgae">{error}</p>}
-
         <button type="submit">Регистрирай се</button>
+
+        {error && <p className="server-error">{error}</p>}
         <p>
           Вече имаш акаунт?
           <Link to="/login">Влез тук</Link>

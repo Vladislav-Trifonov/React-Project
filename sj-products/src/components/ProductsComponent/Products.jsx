@@ -5,19 +5,23 @@ import './products.scss';
 
 
 function Products() {
+
   const [productsList, setProductsList] = useState([]);
+  const [error, setError] = useState(''); 
 
   useEffect(() => {
     getAllProducts()
       .then((response) => setProductsList(response))
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   }, []);
 
   console.log(productsList);
 
   return (
     <section className="all-products">
-      <h1 className="products-header">All products</h1>
+      <h1 className="products-header">Всички продукти</h1>
+
+      {error && <p className="server-error">Сървърът не е включен!</p>}
 
       <div className="products-container">
         {productsList.map((product) => (

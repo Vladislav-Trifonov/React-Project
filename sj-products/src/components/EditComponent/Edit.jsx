@@ -1,18 +1,30 @@
-import "./create.scss";
-import { addProduct } from "../../services/productsService";
-import { useNavigate } from "react-router-dom";
+import "./edit.scss";
+import { addProduct, editProduct, getOneProduct } from "../../services/productsService";
+import { useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import AuthContext from "../../contexts/authenticationContext";
 
-function Create() {
+function Edit() {
 
   const navigate = useNavigate();
+  
+  const { productId } = useParams();
 
-  const onSubmitCreateHandler = async (e) => {
+  const { accessToken } = useContext(AuthContext); 
+
+  const [initialValues, setInitialValues] = useState({});
+
+  useEffect(() => {
+    getOneProduct(productId).then(res => setInitialValues(res));
+  }, [productId]); 
+
+  const onSubmitEditHandler = async (e) => {
     e.preventDefault();
 
     const data = Object.fromEntries(new FormData(e.currentTarget));
 
     try {
-      await addProduct(data); 
+      await editProduct(data, productId, accessToken); 
       navigate('/products')
     } catch(error) {
       console.log(error);  
@@ -21,10 +33,10 @@ function Create() {
   };
 
   return (
-    <section className="create">
-      <h1>Добави Продукт</h1>
+    <section className="edit">
+      <h1>Редактирай Продукт</h1>
 
-      <form className="createForm" onSubmit={onSubmitCreateHandler}>
+      <form className="createForm" onSubmit={onSubmitEditHandler}>
         <div>
           <label htmlFor="name">Име</label>
           <input
@@ -33,6 +45,7 @@ function Create() {
             placeholder="Име на продукта"
             required
             min="4"
+            defaultValue={initialValues.name}
           />
         </div>
 
@@ -44,6 +57,7 @@ function Create() {
             id="image"
             placeholder="URL на снимката"
             required
+            defaultValue={initialValues.img}
           />
         </div>
 
@@ -56,6 +70,7 @@ function Create() {
             list="description"
             placeholder="Описание за продукта"
             required
+            defaultValue={initialValues.description}
           />
         </div>
 
@@ -67,13 +82,14 @@ function Create() {
             id="price"
             placeholder="9.99"
             required
+            defaultValue={initialValues.price}
           />
         </div>
 
-        <button type="submit">Добави</button>
+        <button type="submit">Редактирай</button>
       </form>
     </section>
   );
 }
 
-export default Create;
+export default Edit;

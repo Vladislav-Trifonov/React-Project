@@ -38,6 +38,4 @@ export async function register(email, password) {
   }
 }
 
-export function logout() {
-    sessionStorage.removeItem('userData');
-}
+export const logout = () => fetch(`${baseUrl}/logout`);

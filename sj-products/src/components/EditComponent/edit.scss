@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.create {
+.edit {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@
     height: 65vh;
   }
   
-  .create form {
+  .edit form {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
@@ -27,19 +27,19 @@
     background-color: #fff;
   }
   
-  .create h1 {
+  .edit h1 {
     font-weight: bold;
-    color: black; 
+    color: black;
     font-size: 24px;
     margin-bottom: 20px; 
   }
   
-  .create label {
+  .edit label {
     font-weight: bold;
     color: black;
   }
   
-  .create input {
+  .edit input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -48,13 +48,13 @@
     font-size: 14px;
   }
   
-  .create div * {
+  .edit div * {
     color: black;
     font-size: 14px;
     margin-bottom: 10px;
   }
   
-  .create button {
+  .edit button {
     width: 100%;
     padding: 10px;
     background-color: #4CAF50;
@@ -65,7 +65,7 @@
     font-size: 16px;
   }
   
-  .create button:disabled {
+  .edit button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }

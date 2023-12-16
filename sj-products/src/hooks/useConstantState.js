@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function usePersistedState(key, defaultValue) {
+export default function useConstantState(key, defaultValue) {
     const [state, setState] = useState(() => {
         const persistedState = sessionStorage.getItem(key);
 

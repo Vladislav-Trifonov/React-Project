@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { login, register } from "../services/userService";
@@ -10,6 +10,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [auth, setAuth] = useConstantState("auth", {});
+  const [error, setError] = useState(''); 
 
   async function onLoginHandler(e) {
     e.preventDefault();
@@ -19,12 +20,18 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const userData = await login(email, password);
-      const accessToken = userData.accessToken;
-      console.log(accessToken);
-      sessionStorage.setItem("accessToken", accessToken);
+      
+      setAuth(userData);
+
+      sessionStorage.setItem("accessToken", userData.accessToken);
+
       navigate("/");
     } catch (error) {
       console.log(error.message);
+
+      if (error.message === 'Failed to fetch') {
+          setError('Сървърът не е свързан!')
+      }
     }
   }
 
@@ -44,6 +51,8 @@ export const AuthProvider = ({ children }) => {
       try {
         const userData = await register(email, password);
 
+        setAuth(userData);
+
         sessionStorage.setItem("accessToken", userData.accessToken);
         navigate("/");
       } catch (error) {
@@ -52,7 +61,8 @@ export const AuthProvider = ({ children }) => {
     }
 
     onRegisterHandler(email, password);
-    console.log(email, password);
+   
+
   }
 
   const logoutHandler = () => {
@@ -68,6 +78,9 @@ export const AuthProvider = ({ children }) => {
     email: auth.email,
     userId: auth._id,
     isAuthenticated: !!auth.accessToken,
+    accessToken: auth.accessToken,
+    error,
+    setError
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

@@ -1,12 +1,22 @@
 .all-products {
     height: 65vh;
+    padding-left: 2rem;
 }
 
 .products-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    gap: 2rem;
 }
 
 .products-header {
     text-align: center;
+    padding: 1rem 0rem;
+    font-size: 1.5rem;
+}
+
+.server-error {
+    text-align: center;
+    font-size: 2rem;
+    color: red;
+    padding-top: 4rem;
 }
