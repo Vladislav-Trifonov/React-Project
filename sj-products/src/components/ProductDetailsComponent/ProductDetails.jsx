@@ -5,7 +5,7 @@ import { getOneProduct, removeProduct } from "../../services/productsService";
 import './product-details.scss'; 
 
 import AuthContext from "../../contexts/authenticationContext";
-import { addLike } from "../../services/likesService";
+import { addLike, testReq } from "../../services/likesService";
 
 export default function ProductDetails() {
   const navigate = useNavigate();
@@ -32,10 +32,15 @@ export default function ProductDetails() {
     }
   };
 
+  // const likeButtonClickHandler = async () => {
+  //    const test = await addLike(productId); 
+  //    console.log(test);
+  // }
+
   const likeButtonClickHandler = async () => {
-     const test = await addLike(productId); 
-     console.log(test);
-  }
+    const test = await testReq(productId); 
+    console.log(test);
+ }
 
   return (
     <section className="product-details">

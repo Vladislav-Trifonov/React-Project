@@ -22,9 +22,12 @@ function Header() {
         <Link to="/products" className="navigation-item">
           Продукти
         </Link>
-        {isAuthenticated && <Link to="/create" className="navigation-item">
+        {isAuthenticated && <><Link to="/create" className="navigation-item">
           Добави Продукт
-        </Link>}
+        </Link>
+        <Link to="/profile" className="navigation-item">
+          Профил
+        </Link></>}
       </nav>
 
       <div className="login-register">

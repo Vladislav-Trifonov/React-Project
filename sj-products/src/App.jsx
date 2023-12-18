@@ -17,6 +17,7 @@ import GuestGard from "./components/GuardsComponents/GuestGuard";
 import UserGard from "./components/GuardsComponents/UserGuard";
 import ProductDetails from "./components/ProductDetailsComponent/ProductDetails";
 import Logout from "./components/LogoutComponent/Logout";
+import Profile from "./components/ProfileComponent/Profile";
 
 function App() {
   const components = [FirstCarousel, SecondCarousel, ThirdCarousel];
@@ -36,6 +37,7 @@ function App() {
         <Route path="/products" element={<Products />} />
 
         <Route element={<GuestGard />}>
+          <Route path="/profile" element={<Profile />} />
           <Route path="/create" element={<Create />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/products/:productId/edit" element={<Edit />} />

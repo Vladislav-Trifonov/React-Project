@@ -61,3 +61,13 @@ export const editProduct = async (productData, productId, accessToken) => {
 
     return result;
 };
+
+export const getPersonalProducts = async (userId) => {
+  const url = `http://localhost:3030/data/products?where=_ownerId%3D%22${userId}%22&sortBy=name`;
+  
+  const result = await fetch(url); 
+
+  const personalProducts = await result.json();
+
+  return personalProducts; 
+}
