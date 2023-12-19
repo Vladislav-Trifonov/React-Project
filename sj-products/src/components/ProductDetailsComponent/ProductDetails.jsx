@@ -32,16 +32,6 @@ export default function ProductDetails() {
     }
   };
 
-  // const likeButtonClickHandler = async () => {
-  //    const test = await addLike(productId); 
-  //    console.log(test);
-  // }
-
-  const likeButtonClickHandler = async () => {
-    const test = await testReq(productId); 
-    console.log(test);
- }
-
   return (
     <section className="product-details">
       <div className="single-product">
@@ -51,11 +41,7 @@ export default function ProductDetails() {
 
         <p className="releaseDate">Цена: {product.price}</p>
         <p className="description">{product.description}</p>
-        
-        {canLike && 
-        <button className="edit-delete-btn" onClick={likeButtonClickHandler}>Харесай</button>
-      }
-
+   
         {product._ownerId === userId && 
         <div className="btn-holder">
         <Link to={`/products/${product._id}/edit`} className="edit-delete-btn only-edit">Редактиране</Link>

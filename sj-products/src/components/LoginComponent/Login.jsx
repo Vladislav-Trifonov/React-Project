@@ -38,7 +38,7 @@ function Login() {
 
         <button type="submit">Влез</button>
 
-        {error && <p className="server-error">Сървърът не е включен!</p>}
+        {error && <p className="error-message">{error}</p>}
 
         <p className="no-account">
           Все още нямаш акаунт?

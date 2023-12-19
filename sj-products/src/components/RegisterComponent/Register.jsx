@@ -51,10 +51,10 @@ function Register() {
 
         <button type="submit">Регистрирай се</button>
 
-        {error && <p className="server-error">{error}</p>}
-        <p>
+        {error && <p className="error-message">{error}</p>}
+        <p className="has-account">
           Вече имаш акаунт?
-          <Link to="/login">Влез тук</Link>
+          <Link to="/login" className="to-login">Влез тук</Link>
         </p>
       </form>
     </section>

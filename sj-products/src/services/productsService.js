@@ -71,3 +71,15 @@ export const getPersonalProducts = async (userId) => {
 
   return personalProducts; 
 }
+
+export const search = async (productName) => {
+  const url = `http://localhost:3030/data/products?where=name%20LIKE%20%22${productName}%22`;
+
+  const result = await fetch(url); 
+
+  const searchResults = await result.json();
+
+  console.log(searchResults);
+
+  return searchResults; 
+}

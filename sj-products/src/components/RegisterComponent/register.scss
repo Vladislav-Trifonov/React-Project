@@ -37,7 +37,7 @@
 .register-form button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #4788fc;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -54,17 +54,23 @@
     text-align: center;
 }
 
-.register-form p>a {
-    text-decoration: underline;
-    color: #007bff;
-}
-
 .register-google{
     margin-top: 1rem;
 }
 
-.error {
-    font-size: 24px;
+.error-message {
     color: #ff0000;
     font-weight: bold;
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+
+.to-login {
+    text-decoration: unset;
+    color: #007bff;
+    padding-left: 6px;
+}
+
+.has-account {
+    padding-top: 1rem;
 }

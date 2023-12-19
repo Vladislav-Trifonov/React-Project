@@ -21,6 +21,10 @@ function Products() {
     <section className="all-products">
       <h1 className="products-header">Всички продукти</h1>
 
+      <div className="search">
+
+      </div>
+
       {error && <p className="server-error">Сървърът не е включен!</p>}
 
       <div className="products-container">
@@ -28,6 +32,8 @@ function Products() {
           <SingleProduct key={product._id} {...product} />
         ))}
       </div>
+
+      {(productsList.length === 0) && <p>Все още няма добавени продукти!</p>}
     </section>
   );
 }

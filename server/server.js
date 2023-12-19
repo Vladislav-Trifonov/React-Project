@@ -1344,16 +1344,30 @@
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "ПДЧ",
                 price: 30,
-                description: "Някакво тестово описание",
-    			img: "https://newman-group.bg/wp-content/uploads/2016/05/blurb-8-min.jpg",
+                description: "Плочите от пресовани дървесни частици (ПДЧ) дават нужната структурна здравина на мебелите, а декоративното покритие от меламин добавя стил",
+    			img: "https://www.eurotrading.bg/images/catalogs/large/laminirani-ploskostib.jpg",
     			_createdOn: 1613551279012
     		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
+            "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			name: "Плотове",
+                price: 50,
+                description: "Създаден от висококачествени материали, нашият кухнен плот предлага несравнен стил и издръжливост.",
+    			img: "https://ibuilder.techinfus.com/images/article/croppedtop/718-400/2018/12/osobennosti-stoleshnic-pod-derevo-dlya-kuhni-24.jpg",
+    			_createdOn: 1613551344360
+    		},"0a272c58-b7ea-4e09-a000-7ec988248f66": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			name: "Мебелни кантове",
+                price: 10,
+                description: "Нашите мебелни кантове са изработени от висококачествени материали, които осигуряват дълготрайна защита на ръбовете от удари, надрасквания и влага.",
+    			img: "https://s.alicdn.com/@sc04/kf/H28e424cc72bd405d829d41ce75189065R.jpg_300x300.jpg",
+    			_createdOn: 1613551344360
+    		},"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "МДФ",
                 price: 40,
-                description: "Някакво тестово описание",
-    			img: "https://www.home-max.bg/static/media/ups/cached/d5466e5285d453400d2d436a4be2659ec5abf6ff.jpg",
+                description: "МДФ - плоскости от дървесни влакна със средна плътност, по-здрав и много по-плътен продукт от шперплат или ПДЧ.",
+    			img: "https://bulsilva.com/wp-content/uploads/2017/05/furnirovaniPDC-min.jpg",
     			_createdOn: 1613551344360
     		},
     	},

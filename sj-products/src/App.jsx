@@ -18,6 +18,8 @@ import UserGard from "./components/GuardsComponents/UserGuard";
 import ProductDetails from "./components/ProductDetailsComponent/ProductDetails";
 import Logout from "./components/LogoutComponent/Logout";
 import Profile from "./components/ProfileComponent/Profile";
+import Contacts from "./components/ContactsComponent/Contacts";
+import Search from "./components/SearchComponent/Search";
 
 function App() {
   const components = [FirstCarousel, SecondCarousel, ThirdCarousel];
@@ -35,6 +37,8 @@ function App() {
 
         <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/search" element={<Search />} />
 
         <Route element={<GuestGard />}>
           <Route path="/profile" element={<Profile />} />

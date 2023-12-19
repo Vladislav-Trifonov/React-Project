@@ -22,6 +22,12 @@ function Header() {
         <Link to="/products" className="navigation-item">
           Продукти
         </Link>
+        <Link to="/contacts" className="navigation-item">
+          Контакти
+        </Link>
+        <Link to="/search" className="navigation-item">
+          Търсачка
+        </Link>
         {isAuthenticated && <><Link to="/create" className="navigation-item">
           Добави Продукт
         </Link>

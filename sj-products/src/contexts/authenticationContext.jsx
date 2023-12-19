@@ -20,17 +20,14 @@ export const AuthProvider = ({ children }) => {
 
     try {
       const userData = await login(email, password);
-      
       setAuth(userData);
-
       sessionStorage.setItem("accessToken", userData.accessToken);
-
       navigate("/");
     } catch (error) {
-      console.log(error.message);
-
       if (error.message === 'Failed to fetch') {
           setError('Сървърът не е свързан!')
+      } else {
+        setError('Грешен имейл или парола. Моля опитайте отново!')
       }
     }
   }
@@ -62,7 +59,6 @@ export const AuthProvider = ({ children }) => {
 
     onRegisterHandler(email, password);
    
-
   }
 
   const logoutHandler = () => {
@@ -74,8 +70,6 @@ export const AuthProvider = ({ children }) => {
     onLoginHandler,
     onRegisterHandler,
     logoutHandler,
-    username: auth.username || auth.email,
-    email: auth.email,
     userId: auth._id,
     isAuthenticated: !!auth.accessToken,
     accessToken: auth.accessToken,
