@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAllProducts } from "../../services/productsService";
+// import { getAllProducts } from "../../services/productsService";
 import SingleProduct from "../SingleProductComponent/SingleProduct";
 import './products.scss';
-
+import { productsList } from "../../services/productsService";
 
 function Products() {
 
-  const [productsList, setProductsList] = useState([]);
+  // const [productsList, setProductsList] = useState([]);
   const [error, setError] = useState(''); 
-
-  useEffect(() => {
-    getAllProducts()
-      .then((response) => setProductsList(response))
-      .catch((error) => setError(error.message));
-  }, []);
 
   console.log(productsList);
 
@@ -29,7 +23,7 @@ function Products() {
 
       <div className="products-container">
         {productsList.map((product) => (
-          <SingleProduct key={product._id} {...product} />
+          <SingleProduct key={product.productId} {...product} />
         ))}
       </div>
 

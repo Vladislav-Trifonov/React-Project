@@ -8,6 +8,7 @@ import SingleProduct from "../SingleProductComponent/SingleProduct";
 function Search(searchParam) {
   const [searchedProducts, setSearchedProducts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [showNoResultsMessage, setShowNoResultsMessage] = useState(false);
 
 
   const onSearchInputChange = (event) => {
@@ -21,7 +22,7 @@ function Search(searchParam) {
     const productsList = await search(searchValue);
 
     setSearchedProducts(productsList);
-
+    setShowNoResultsMessage(productsList.length === 0);
     setSearchValue("");
   }
 
@@ -47,6 +48,8 @@ function Search(searchParam) {
           <SingleProduct key={product._id} {...product} />
         ))}
       </div>
+
+      {showNoResultsMessage && <p className="no-products-found">Няма продукти, които да отговарят на вашето търсене. Опитайте отново!</p>}
     </section>
   );
 }

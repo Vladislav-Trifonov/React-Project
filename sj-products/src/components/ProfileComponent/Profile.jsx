@@ -38,7 +38,7 @@ function Profile() {
           Добави
         </Link></h3>}
 
-        <GoogleMaps/>
+       
     </section>
   );
 }

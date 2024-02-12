@@ -26,8 +26,8 @@ function Footer () {
                 Контакти
                 <div className='contacts-list'>
                     <h4>Русе</h4>
-                    <p>тел: 0890399166</p>
-                    <p>имейл: sj-products@abv.bg</p>
+                    <p>Тел: 0890399166</p>
+                    <p>Имейл: sj-products@abv.bg</p>
                 </div>
             </article>
        </section>

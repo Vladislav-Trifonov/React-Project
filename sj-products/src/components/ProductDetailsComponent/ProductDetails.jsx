@@ -5,7 +5,6 @@ import { getOneProduct, removeProduct } from "../../services/productsService";
 import './product-details.scss'; 
 
 import AuthContext from "../../contexts/authenticationContext";
-import { addLike, testReq } from "../../services/likesService";
 
 export default function ProductDetails() {
   const navigate = useNavigate();
@@ -39,8 +38,8 @@ export default function ProductDetails() {
 
         <h3>Име: {product.name}</h3>
 
-        <p className="releaseDate">Цена: {product.price}</p>
-        <p className="description">{product.description}</p>
+        <p className="price">Цена: {product.price}лв</p>
+        <p className="description">Описание: {product.description}</p>
    
         {product._ownerId === userId && 
         <div className="btn-holder">
