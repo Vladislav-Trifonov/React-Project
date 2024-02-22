@@ -13,8 +13,7 @@ function Products() {
 
   return (
     <section className="all-products">
-      <h1 className="products-header">Всички продукти</h1>
-
+    
       <div className="search">
 
       </div>

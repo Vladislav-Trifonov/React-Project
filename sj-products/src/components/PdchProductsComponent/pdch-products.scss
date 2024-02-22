@@ -1,0 +1,30 @@
+.pdch-products {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1rem;
+    padding-top: 3rem;
+    place-content: center;
+    padding-left: 4rem;
+    row-gap: 3rem;
+}
+
+.pdch-img {
+    height: 300px;
+    width: 300px;
+}
+
+.pdch-description {
+    width: 300px;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.single-pdchproduct {
+    border: 5px solid white;
+    width: 310px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.single-pdchproduct:hover {
+    transform: scale(1.1); 
+}

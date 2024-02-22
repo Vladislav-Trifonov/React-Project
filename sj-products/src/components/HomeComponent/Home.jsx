@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 import React, { useState } from "react";
+import Products from "../ProductsComponent/Products";
 
 function Home({ components }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,6 +20,7 @@ function Home({ components }) {
   };
 
   return (
+    <>
     <div className="carousel">
       {components.map((Component, index) => (
         <div key={index} className={index === currentIndex ? "visible" : "hidden"}>
@@ -30,6 +32,8 @@ function Home({ components }) {
         <button onClick={nextComponent} className="change-button"><FontAwesomeIcon icon={faAngleRight} className="font-awesome-icon"/></button>
       </div>
     </div>
+    <Products/>
+    </>
   );
 }
 

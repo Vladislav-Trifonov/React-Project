@@ -2,7 +2,9 @@
 
     display: flex;
     justify-content: space-between;
-    background-color: black; 
+    background-color: #faf0e6; 
+    font-size: 1.1rem;
+    font-weight: bold;
 
     .login-register {
         display: flex;
@@ -22,13 +24,13 @@
     .logout {
         border: none;
         background-color: unset;
-        color: white;
+        color: black;
         text-decoration: none;
     }
 
     .login-register, .navigation-item {
         text-decoration: none;
-        color: white;
+        color: black;
     }
 
 

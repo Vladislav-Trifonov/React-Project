@@ -20,12 +20,6 @@ function Contacts() {
         <p>Намерете ни на картата:</p>
         <GoogleMaps />
       </div>
-
-      <div className="test">
-        <div className="test1">
-          TEST
-        </div>
-      </div>
     </section>
   );
 }

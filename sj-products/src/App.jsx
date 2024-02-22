@@ -20,6 +20,7 @@ import Logout from "./components/LogoutComponent/Logout";
 import Profile from "./components/ProfileComponent/Profile";
 import Contacts from "./components/ContactsComponent/Contacts";
 import Search from "./components/SearchComponent/Search";
+import PdchProducts from "./components/PdchProductsComponent/PdchProducts";
 
 function App() {
   const components = [FirstCarousel, SecondCarousel, ThirdCarousel];
@@ -37,6 +38,7 @@ function App() {
 
         <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/pdch" element={<PdchProducts />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/search" element={<Search />} />
 
